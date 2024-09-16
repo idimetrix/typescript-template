@@ -1,0 +1,57 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.3",
+  "description": "NPM package template with TypeScript, Tests (unit + integration) and NPM/YARN/PNPM",
+  "license": "MIT",
+  "author": {
+    "name": "Dmitrii Selikhov",
+    "email": "dmitrii.selikhov@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
+  },
+  "contributors": [
+    {
+      "name": "Dmitrii Selikhov",
+      "email": "dmitrii.selikhov@gmail.com",
+      "url": "https://www.linkedin.com/in/dimetrix"
+    }
+  ],
+  "email": "dmitrii.selikhov@gmail.com",
+  "scripts": {
+    "build": "tsup ./src",
+    "test": "jest -c=jest.config.js",
+    "prettier": "prettier --write src/**",
+    "format": "pnpm prettier && pnpm type",
+    "bootstrap": "pnpm install && pnpm format",
+    "type": "tsc --noEmit --incremental",
+    "tsc:clean": "tsc --build --clean",
+    "prepare": "husky"
+  },
+  "homepage": "https://github.com/idimetrix/typescript-template#readme",
+  "url": "https://github.com/idimetrix/typescript-template/issue",
+  "bugs": {
+    "url": "https://github.com/idimetrix/typescript-template/issues"
+  },
+  "keywords": [],
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "jest": "29.7.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "tsup": "8.2.4",
+    "typescript": "5.6.2"
+  }
+}
