@@ -18,9 +18,12 @@
   "email": "dmitrii.selikhov@gmail.com",
   "scripts": {
     "build": "tsup ./src",
+    "watch": "tsup ./src --watch",
+    "run": "node dist/index.js",
+    "dev": "pnpm run watch & nodemon dist/index.js",
     "test": "jest -c=jest.config.js",
     "prettier": "prettier --write src/**",
-    "format": "pnpm prettier && pnpm type",
+    "format": "pnpm run prettier && pnpm type",
     "bootstrap": "pnpm install && pnpm format",
     "type": "tsc --noEmit --incremental",
     "tsc:clean": "tsc --build --clean",
@@ -36,20 +39,21 @@
     "dist",
     "package.json"
   ],
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
   "devDependencies": {
-    "husky": "^9.1.6",
+    "husky": "9.1.6",
     "jest": "29.7.0",
-    "lint-staged": "^15.2.10",
+    "nodemon": "3.1.4",
+    "lint-staged": "15.2.10",
     "prettier": "3.3.3",
     "tsup": "8.2.4",
     "typescript": "5.6.2"
