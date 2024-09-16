@@ -41,4 +41,4 @@ $ npm publish
 
 
 ## test package
-https://www.npmjs.com/package/typescript-template
+https://www.npmjs.com/package/typescript-test-template

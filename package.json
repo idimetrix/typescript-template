@@ -1,6 +1,6 @@
 {
-  "name": "typescript-template",
-  "version": "1.0.1",
+  "name": "typescript-test-template",
+  "version": "1.0.2",
   "description": "NPM package template with TypeScript, Tests (unit + integration) and NPM/YARN/PNPM",
   "license": "MIT",
   "author": {
